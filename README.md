@@ -34,5 +34,6 @@ call dein#add('mhartington/deoplte-typescript')
 
 This adds icons to your file tree (if using nerdTree). So over the top....I need it.
 
+### Where I stole stuff from
 - [Mhartington's Dotfiles](https://github.com/mhartington/dotfiles)
 - [Rhomeister's Dotfiles](https://github.com/rhomeister/dotfiles)
