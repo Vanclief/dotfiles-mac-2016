@@ -1,8 +1,6 @@
 # Franco's Dotfiles 
 
-Repo for my dotfiles, based on 
-99% Other's great work
-1% My own tweaks
+Repo for my dotfiles, 99% stolen from other dotfiles.
 
 ## NeoVim
 
@@ -36,16 +34,5 @@ call dein#add('mhartington/deoplte-typescript')
 
 This adds icons to your file tree (if using nerdTree). So over the top....I need it.
 
-I use Source Code Pro for my fonts, maybe you do too. But we're using powerline here folks, so we need some patched fonts.
-
-https://github.com/ryanoasis/nerd-fonts
-
-Install one of these fonts and you should be good to go. Don't forget to set your terminal font to that font as well.
-
-### Tmux powerline
-My status bar for tmux is custom, only using a few plugins for battery charge and memory usage. Was a nice experiment with the tmux API. Also it uses powerline symbols, which should be covered.
-
-##Inspiration
-- [Rom Awesome](https://github.com/square/maximum-awesome)
-- [Paul's Dotfiles](https://github.com/paulirish/dotfiles)
-- [Andrew's Dotfiles](https://github.com/ajoslin/dot)
+- [Mhartington's Dotfiles](https://github.com/mhartington/dotfiles)
+- [Rhomeister's Dotfiles](https://github.com/rhomeister/dotfiles)

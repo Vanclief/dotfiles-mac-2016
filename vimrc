@@ -56,6 +56,9 @@ call dein#add('jreybert/vimagit')
 call dein#add('mhinz/vim-signify')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
 
+call dein#add('xolox/vim-notes')
+call dein#add('xolox/vim-misc')
+
 call dein#add('tpope/vim-repeat')
 call dein#add('scrooloose/syntastic')
 call dein#add('editorconfig/editorconfig-vim')
