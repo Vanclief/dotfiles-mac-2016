@@ -6,10 +6,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
-
-
 export _Z_DATA="$HOME/z-data"
-
 
 source ~/.z/z.sh
 

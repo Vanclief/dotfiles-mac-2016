@@ -1,11 +1,11 @@
-"|  \/  (_) |                        (_)
-"| .  . |_| | _____  ___   _ ____   ___ _ __ ___  _ __ ___
-"| |\/| | | |/ / _ \/ __| | '_ \ \ / / | '_ ` _ \| '__/ __|
-"| |  | | |   <  __/\__ \ | | | \ V /| | | | | | | | | (__
-"\_|  |_/_|_|\_\___||___/ |_| |_|\_/ |_|_| |_| |_|_|  \___|
+"| |  / /   |  / | / / ____/ /   /  _/ ____/ ____/
+"| | / / /| | /  |/ / /   / /    / // __/ / /_    
+"| |/ / ___ |/ /|  / /___/ /____/ // /___/ __/    
+"|___/_/  |_/_/ |_/\____/_____/___/_____/_/      
 "
-" Author: Mike Hartington
-" repo  : https://github.com/mhartington/dotfiles/
+" Author: Franco Valencia
+" repo  : https://github.com/Vanclief/dotfiles/
+" inspiration  : https://github.com/mhartington/dotfiles/
 "
 
 " Setup dein  ---------------------------------------------------------------{{{
@@ -21,6 +21,9 @@
   " call dein#local('~/GitHub', {},['denite.nvim'])
   call dein#add('Shougo/neomru.vim')
   call dein#add('haya14busa/dein-command.vim')
+
+" theme
+  call dein#add('mhartington/oceanic-next')
 
 " syntax
   call dein#add('neovim/node-host', {'build': 'npm install'})
@@ -113,7 +116,7 @@
   " call dein#local('~/GitHub', {},['deoplete-html'])
   " call dein#local('~/GitHub', {},['deoplete-npm'])
   call dein#local('~/GitHub', {},['vim-folds'])
-  call dein#local('~/GitHub', {},['oceanic-next'])
+  " call dein#local('~/GitHub', {},['oceanic-next'])
   call dein#local('~/GitHub', {},['operator-next'])
   call dein#local('~/GitHub', {},['nvim-typescript'])
   call dein#local('~/GitHub', {},['vim-angular2-snippets'])

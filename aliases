@@ -18,12 +18,13 @@ alias ll='ls -al'
 alias l='ls -a'
 alias l1='ls -1'
 
-# because I'm to lazy to write vim
+# because I'm to lazy to write stuff
 alias v='nvim'
-# alias n="nvim"
+alias n="nvim"
 alias s="sudo"
-alias e="open -a /Applications/Emacs.app"
-alias n="open -a /Applications/Neovim.app"
+alias g="git"
+# alias n="open -a /Applications/Neovim.app"
+
 # Desktop Programs
 alias xcode="open -a '/Applications/XCode.app'"
 alias safari="open -a safari"
@@ -34,7 +35,8 @@ alias fh='open -a Finder .'
 alias textedit='open -a TextEdit'
 alias hex='open -a "Hex Fiend"'
 alias skype='open -a Skype'
-alias slack="open -a '/Applications/Slack.app'"
+alias franz="open -a '/Applications/Franz.app'"
+alias spot="open -a '/Applications/Spotitfy.app'"
 
 # Usefull stuff for presentation and seeing dotfiles
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
