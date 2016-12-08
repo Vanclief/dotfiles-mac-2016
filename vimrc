@@ -58,6 +58,7 @@ call dein#add('Xuyuanp/nerdtree-git-plugin')
 
 call dein#add('xolox/vim-notes')
 call dein#add('xolox/vim-misc')
+call dein#add('easymotion/vim-easymotion')
 
 call dein#add('tpope/vim-repeat')
 call dein#add('scrooloose/syntastic')
@@ -194,6 +195,25 @@ noremap K 5k
 " give it a try and you will like it
 nnoremap ; :
 inoremap <c-f> <c-x><c-f>
+
+" EasyMotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
 " Copy to osx clipboard
 vnoremap <C-c> "*y<CR>
 vnoremap y "*y<CR>
@@ -202,6 +222,10 @@ let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+
+" Switch between the last two files
+nnoremap <Space><Space> <c-^>
+vnoremap <Space><Space> <c-^>
 
 " Align blocks of text and keep them selected
 vmap < <gv
@@ -287,8 +311,8 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 autocmd FileType vim setlocal fdc=1
 set foldlevel=99
 " Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
+" nnoremap <Space> za
+" vnoremap <Space> za
 autocmd FileType vim setlocal foldmethod=marker
 autocmd FileType vim setlocal foldlevel=0
 

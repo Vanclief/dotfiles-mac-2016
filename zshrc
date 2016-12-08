@@ -27,7 +27,6 @@ source ~/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle marzocchi/zsh-notify
 antigen apply
 
 source ~/.z/z.sh
