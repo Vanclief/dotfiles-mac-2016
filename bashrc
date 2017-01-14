@@ -1,11 +1,16 @@
 #!/bin/sh
 
 # This is for android crap
-export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools
+# export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools
+export ANDROID_HOME=/usr/local/opt/android-sdk
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
+# Fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# For z
 export _Z_DATA="$HOME/z-data"
 
 source ~/.z/z.sh

@@ -16,6 +16,9 @@ zstyle ':completion:*:*:git:*' script /usr/local/etc/bash_completion.d/git-compl
 set editing-mode vi
 set blink-matching-paren on
 
+#Fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit && compinit
 zmodload -i zsh/complist
