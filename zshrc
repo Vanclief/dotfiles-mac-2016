@@ -18,6 +18,7 @@ set blink-matching-paren on
 
 #Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit && compinit

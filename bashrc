@@ -7,6 +7,11 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
+# LEJOS CRAP
+export NXJ_HOME="/usr/local/leJOS_NXJ"
+export LEJOS_NXT_JAVA_HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+export PATH="$NXJ_HOME/bin:$PATH"
+
 # Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
 
@@ -292,6 +297,7 @@ while (( $# > 0 )); do
 }
 
 alias x=extract
+alias racket='/Applications/Racket\ v6.8/bin/racket'
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

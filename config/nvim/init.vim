@@ -74,6 +74,7 @@ call dein#add('tpope/vim-repeat')
 call dein#add('xolox/vim-notes')
 call dein#add('xolox/vim-misc')
 call dein#add('easymotion/vim-easymotion')
+call dein#add('rizzatti/dash.vim')
 
 call dein#add('neomake/neomake')
 
@@ -102,6 +103,7 @@ call dein#add('Shougo/neoinclude.vim')
 call dein#add('ujihisa/neco-look', {'on_ft': ['markdown','text','html']})
 call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
 call dein#add('zchee/deoplete-jedi', {'on_ft': 'python'})
+call dein#add('artur-shaik/vim-javacomplete2')
 call dein#add('zchee/nvim-go', {'build': 'gb build'})
 call dein#add('zchee/deoplete-go', {'build': 'make'})
 call dein#add('Konfekt/FastFold')
@@ -219,6 +221,7 @@ nmap cp :let @+= expand("%") <cr>
 tmap <esc> <c-\><c-n><esc><cr>
 " ,i to indent code, requires formatters: read the docs
 noremap <leader>i :Autoformat<CR>
+let g:formatter_yapf_style = 'pep8'
 let g:lmap.f = { 'name' : 'Format file' }
 noremap <leader>TM :TableModeToggle<CR>
 " exit insert, dd line, enter insert
