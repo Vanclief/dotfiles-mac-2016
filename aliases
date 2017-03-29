@@ -51,15 +51,15 @@ alias dsclean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
 alias flush='dscacheutil -flushcache'
 
 function symLink(){
-echo "Creating symlinks"
-cp -f dist/js/ionic.bundle.js tmp/www/lib/ionic/js/ionic.bundle.js
-cp -f dist/css/ionic.css tmp/www/lib/ionic/css/ionic.css
-echo "done"
-  }
+  echo "Creating symlinks"
+  cp -f dist/js/ionic.bundle.js tmp/www/lib/ionic/js/ionic.bundle.js
+  cp -f dist/css/ionic.css tmp/www/lib/ionic/css/ionic.css
+  echo "done"
+}
 
-  # Because Typing python -m SimpleHTTPServer is too Damn Long
-  # Start an HTTP server from a directory, optionally specifying the port
-  function server() {
+# Because Typing python -m SimpleHTTPServer is too Damn Long
+# Start an HTTP server from a directory, optionally specifying the port
+function server() {
   local port="${1:-8000}"
   #    open "http://localhost:${port}/"
   open -a google\ chrome\ canary "http://localhost:${port}/" --args --disable-web-security
@@ -69,14 +69,14 @@ echo "done"
 }
 
 function run(){
-ionic build "$1" && ionic run "$1" --device -lc
+  ionic build "$1" && ionic run "$1" --device -lc
 }
 function sim(){
-ionic build "$1" && ionic emulate "$1"
+  ionic build "$1" && ionic emulate "$1"
 }
 
 function download(){
-curl -O "$1"
+  curl -O "$1"
 }
 
 function highlight(){
@@ -85,20 +85,20 @@ function highlight(){
 
 alias dl=download
 function ghUpdate() {
-if git remote | grep upstream > /dev/null;
-then
-  echo "upstream is set"
-else
-  read "?Whats the URl of the original repo? | " answer
-  # Add the remote, call it "upstream":
-  echo $answer
-  git remote add upstream $answer
+  if git remote | grep upstream > /dev/null;
+  then
+    echo "upstream is set"
+  else
+    read "?Whats the URl of the original repo? | " answer
+    # Add the remote, call it "upstream":
+    echo $answer
+    git remote add upstream $answer
 
-fi
-git fetch upstream
-git checkout master
-git rebase upstream/master
-  }
+  fi
+  git fetch upstream
+  git checkout master
+  git rebase upstream/master
+}
 
 function ghPages(){
   if [ -z "$1" ]
@@ -111,24 +111,51 @@ function ghPages(){
 }
 
 # incase i forget how to clear
-  alias c='clear'
-  alias k='clear'
-  alias cls='clear'
+alias c='clear'
+alias k='clear'
+alias cls='clear'
 
 # presentation crap
-  # alias whoamireally='echo "Mike Hartington
-  # Dev Advocate for Ionic
-  # Beer lover and Cat lover" '
+# alias whoamireally='echo "Mike Hartington
+# Dev Advocate for Ionic
+# Beer lover and Cat lover" '
 
 # archive file or folder
-  function compress()
-  {
-    dirPriorToExe=`pwd`
-    dirName=`dirname $1`
-    baseName=`basename $1`
+function compress()
+{
+  dirPriorToExe=`pwd`
+  dirName=`dirname $1`
+  baseName=`basename $1`
 
-    if [ -f $1 ] ; then
-      echo "It was a file change directory to $dirName"
+  if [ -f $1 ] ; then
+    echo "It was a file change directory to $dirName"
+    cd $dirName
+    case $2 in
+      tar.bz2)
+        tar cjf $baseName.tar.bz2 $baseName
+        ;;
+      tar.gz)
+        tar czf $baseName.tar.gz $baseName
+        ;;
+      gz)
+        gzip $baseName
+        ;;
+      tar)
+        tar -cvvf $baseName.tar $baseName
+        ;;
+      zip)
+        zip -r $baseName.zip $baseName
+        ;;
+      *)
+        echo "Method not passed compressing using tar.bz2"
+        tar cjf $baseName.tar.bz2 $baseName
+        ;;
+    esac
+    echo "Back to Directory $dirPriorToExe"
+    cd $dirPriorToExe
+  else
+    if [ -d $1 ] ; then
+      echo "It was a Directory change directory to $dirName"
       cd $dirName
       case $2 in
         tar.bz2)
@@ -138,7 +165,7 @@ function ghPages(){
           tar czf $baseName.tar.gz $baseName
           ;;
         gz)
-          gzip $baseName
+          gzip -r $baseName
           ;;
         tar)
           tar -cvvf $baseName.tar $baseName
@@ -154,43 +181,16 @@ function ghPages(){
       echo "Back to Directory $dirPriorToExe"
       cd $dirPriorToExe
     else
-      if [ -d $1 ] ; then
-        echo "It was a Directory change directory to $dirName"
-        cd $dirName
-        case $2 in
-          tar.bz2)
-            tar cjf $baseName.tar.bz2 $baseName
-            ;;
-          tar.gz)
-            tar czf $baseName.tar.gz $baseName
-            ;;
-          gz)
-            gzip -r $baseName
-            ;;
-          tar)
-            tar -cvvf $baseName.tar $baseName
-            ;;
-          zip)
-            zip -r $baseName.zip $baseName
-            ;;
-          *)
-            echo "Method not passed compressing using tar.bz2"
-            tar cjf $baseName.tar.bz2 $baseName
-            ;;
-        esac
-        echo "Back to Directory $dirPriorToExe"
-        cd $dirPriorToExe
-      else
-        echo "'$1' is not a valid file/folder"
-      fi
+      echo "'$1' is not a valid file/folder"
     fi
-    echo "Done"
-    echo "###########################################"
-  }
+  fi
+  echo "Done"
+  echo "###########################################"
+}
 
-  # Extract archives - use: extract <file>
-  # Based on http://dotfiles.org/~pseup/.bashrc
-  function extract() {
+# Extract archives - use: extract <file>
+# Based on http://dotfiles.org/~pseup/.bashrc
+function extract() {
   local remove_archive
   local success
   local file_name
@@ -262,7 +262,7 @@ alias x=extract
 
 
 function gif(){
-   ffmpeg -i $1 -vf scale=$2:-1:flags=lanczos -f gif - | gifsicle --optimize=3 --delay=3 > $3
+  ffmpeg -i $1 -vf scale=$2:-1:flags=lanczos -f gif - | gifsicle --optimize=3 --delay=3 > $3
 }
 
 function fixSSH(){

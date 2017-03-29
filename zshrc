@@ -16,13 +16,11 @@ zstyle ':completion:*:*:git:*' script /usr/local/etc/bash_completion.d/git-compl
 set editing-mode vi
 set blink-matching-paren on
 
-#Fastlane
-export PATH="$HOME/.fastlane/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit && compinit
 zmodload -i zsh/complist
+compinit -d ~/.zcompdump_capture
+
 . <(npm completion)
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -44,3 +42,6 @@ zstyle ':notify:*' success-title "very #success. wow"
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
