@@ -18,14 +18,18 @@ alias ll='ls -al'
 alias l='ls -a'
 alias l1='ls -1'
 
+# incase i forget how to clear
+alias c='clear'
+alias cls='clear'
+
 # because I'm to lazy to write stuff
-alias v='nvim'
+alias v='nvim' #vim is dead
 alias n="nvim"
 alias s="sudo"
 alias g="git"
 alias py="python"
 alias py3="python3"
-# alias n="open -a /Applications/Neovim.app"
+alias ion="ionic"
 
 # Desktop Programs
 alias xcode="open -a '/Applications/XCode.app'"
@@ -36,7 +40,6 @@ alias f='open -a Finder '
 alias fh='open -a Finder .'
 alias textedit='open -a TextEdit'
 alias hex='open -a "Hex Fiend"'
-alias skype='open -a Skype'
 alias franz="open -a '/Applications/Franz.app'"
 alias spot="open -a '/Applications/Spotitfy.app'"
 
@@ -52,25 +55,7 @@ alias dsclean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
 # Flush your dns cache
 alias flush='dscacheutil -flushcache'
 
-function symLink(){
-  echo "Creating symlinks"
-  cp -f dist/js/ionic.bundle.js tmp/www/lib/ionic/js/ionic.bundle.js
-  cp -f dist/css/ionic.css tmp/www/lib/ionic/css/ionic.css
-  echo "done"
-}
-
-# Because Typing python -m SimpleHTTPServer is too Damn Long
-# Start an HTTP server from a directory, optionally specifying the port
-function server() {
-  local port="${1:-8000}"
-  #    open "http://localhost:${port}/"
-  open -a google\ chrome\ canary "http://localhost:${port}/" --args --disable-web-security
-  # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
-  # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
-  python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
-}
-
-function run(){
+function ionrun(){
   ionic build "$1" && ionic run "$1" --device -lc
 }
 function sim(){
@@ -86,41 +71,6 @@ function highlight(){
 }
 
 alias dl=download
-function ghUpdate() {
-  if git remote | grep upstream > /dev/null;
-  then
-    echo "upstream is set"
-  else
-    read "?Whats the URl of the original repo? | " answer
-    # Add the remote, call it "upstream":
-    echo $answer
-    git remote add upstream $answer
-
-  fi
-  git fetch upstream
-  git checkout master
-  git rebase upstream/master
-}
-
-function ghPages(){
-  if [ -z "$1" ]
-  then
-    echo "Which folder do you want to deploy to GitHub Pages?"
-    exit 1
-  fi
-  git subtree push --prefix $1 origin gh-pages
-
-}
-
-# incase i forget how to clear
-alias c='clear'
-alias k='clear'
-alias cls='clear'
-
-# presentation crap
-# alias whoamireally='echo "Mike Hartington
-# Dev Advocate for Ionic
-# Beer lover and Cat lover" '
 
 # archive file or folder
 function compress()
@@ -260,8 +210,6 @@ shift
   done
 }
 alias x=extract
-
-
 
 function gif(){
   ffmpeg -i $1 -vf scale=$2:-1:flags=lanczos -f gif - | gifsicle --optimize=3 --delay=3 > $3
