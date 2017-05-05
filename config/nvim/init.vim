@@ -203,6 +203,8 @@ nnoremap Q <nop>
 vnoremap // y/<C-R>"<CR>
 " recording macros is not my thing changing this for easy motion
 nmap q <Plug>(easymotion-overwin-f2)
+" press jj to exit from insert mode
+imap jj <Esc>
 " exit insert, dd line, enter insert
 inoremap <c-d> <esc>ddi
 " Navigate between display lines
@@ -368,6 +370,7 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " let $NVIM_PYTHON_LOG_LEVEL='DEBUG'
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#documentation_command = "<leader>k"
+let g:jedi#popup_on_dot = 0
 
 " }}}
 

@@ -4,6 +4,8 @@
 [user]
   email = franco.avalencia@gmail.com
   name = Franco Valencia
+[github]
+  user = vanclief
 [credential]
 	helper = osxkeychain
 [filter "hawser"]
@@ -14,23 +16,21 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
-[github]
-  user = vanclief
-
+[push]
+  default = current
 [core]
+  excludesfile = ~/.gitignore
   pager = zsh -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
-
 [color "diff-highlight"]
   oldNormal = "red bold"
   oldHighlight = "red bold 52"
   newNormal = "green bold"
   newHighlight = "green bold 22"
 # [commit]
-#   gpgsign = true
-
+# template = ~/.gitmessage
+# gpgsign = true
 [rebase]
   autosquash = true
-
 [alias]
   aa = add --all
   ap = add --patch

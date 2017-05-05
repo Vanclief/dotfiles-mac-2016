@@ -2,13 +2,14 @@
 export PATH=/usr/local/bin:$PATH
 
 # ANDROID SDK
-export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_HOME=/usr/local/share/android-sdk
 
 # JAVA
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
+export GRADLE_HOME=/usr/local/opt/gradle
 
-# SSH
+ #SSH
 ssh-add -A &> /dev/null
 
 # Fastlane
@@ -17,6 +18,10 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 # For z
 export _Z_DATA="$HOME/z-data"
 source ~/.z/z.sh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+source /Users/FV/perl5/perlbrew/etc/bashrc
 
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
@@ -294,6 +299,3 @@ shift
   done
 }
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-source /Users/FV/perl5/perlbrew/etc/bashrc
