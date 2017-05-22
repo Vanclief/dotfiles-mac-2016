@@ -29,6 +29,7 @@ alias n="nvim"
 alias s="sudo"
 alias g="git"
 alias ion="ionic"
+alias yarn i="yarn install"
 
 # Fix mac problems
 alias fixcamara="sudo killall VDCAssistant"
