@@ -31,6 +31,10 @@
 # gpgsign = true
 [rebase]
   autosquash = true
+[merge]
+  ff = only
+[fetch]
+  prune = true
 [alias]
   aa = add --all
   ap = add --patch
