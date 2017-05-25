@@ -44,7 +44,7 @@ done
 #defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
 # Set sidebar icon size to medium
-#defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Always show scrollbars
 #defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
@@ -144,9 +144,9 @@ sudo pmset -a sms 0
 ###############################################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Trackpad: map bottom right corner to right-click
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
@@ -155,7 +155,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 #defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -165,10 +165,10 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+# defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+# defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
+# defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
@@ -180,18 +180,18 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
 # defaults write NSGlobalDomain AppleLanguages -array "en"
-defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
-defaults write NSGlobalDomain AppleMetricUnits -bool false
+# defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
+# defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
+# defaults write NSGlobalDomain AppleMetricUnits -bool false
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 # sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
 
 # Disable auto-correct
-# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Stop iTunes from responding to the keyboard media keys
-#launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
 # Screen                                                                      #
@@ -214,7 +214,7 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # Enable HiDPI display modes (requires restart)
-sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+# sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 ###############################################################################
 # Finder                                                                      #
@@ -358,7 +358,7 @@ defaults write com.apple.dock show-process-indicators -bool false
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-defaults write com.apple.dock persistent-apps -array
+# defaults write com.apple.dock persistent-apps -array
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false

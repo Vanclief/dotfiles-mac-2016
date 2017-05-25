@@ -5,7 +5,6 @@
 "
 " repo  : https://github.com/vanclief/dotfiles/
 " inspiration  : https://github.com/mhartington/dotfiles/
-" inspiration  : https://github.com/mhartington/dotfiles/
 "
 
 " Setup NeoBundle  ----------------------------------------------------------{{{
@@ -159,6 +158,8 @@ let g:table_mode_corner="|"
 
 " System mappings  ----------------------------------------------------------{{{
 
+" Ruben's exit mode
+imap jj <ESC>
 " No need for ex mode
 nnoremap Q <nop>
 " recording macros is not my thing
@@ -510,3 +511,7 @@ endfunction
 command JscsFix :call JscsFix()
 noremap <leader>j :JscsFix<CR>
 "}}}
+
+
+autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
+autocmd FileType typescript setl omnifunc=tsuquyomi#complete
